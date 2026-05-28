@@ -1,0 +1,15 @@
+{
+    "name": "taller/alkr",
+    "autoload": {
+        "psr-4": {
+            "Taller\\Alkr\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aaron Lopez",
+            "email": "aaronlopez.fr@gmail.com"
+        }
+    ],
+    "require": {}
+}
