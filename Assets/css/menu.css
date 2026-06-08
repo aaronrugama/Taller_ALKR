@@ -1,0 +1,270 @@
+/* ================================================
+   menu.css
+   Menú principal — estilo galáctico e interactivo
+   ================================================ */
+
+/* ------------------------------------------------
+   Variables y reset
+   ------------------------------------------------ */
+:root {
+    --azul-claro:     #63AACE;
+    --violeta:        #807EBD;
+    --violeta-oscuro: #505283;
+    --cyan:           #69CFE1;
+    --azul-suave:     #9DBAE8;
+    --azul-marino:    #4E6387;
+    --lila:           #A6A0D9;
+    --azul-medio:     #5E70A8;
+    --indigo:         #414A7C;
+    --rosa:           #DD92EC;
+    --radio:          12px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------------------------------------------------
+   Fondo galáctico con estrellas en CSS puro
+   Tres capas de radial-gradient simulan
+   puntos de luz dispersos en el fondo            
+   ------------------------------------------------ */
+body {
+    font-family: Palatino, 'Palatino Linotype', Georgia, serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+
+    background-color: #0d0f1e;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(80, 82, 131, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(99, 170, 206, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(221, 146, 236, 0.2) 0%, transparent 50%),
+        /* Estrellas pequeñas: puntos blancos dispersos con radial-gradient repetido */
+        radial-gradient(1px 1px at 10%  15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25%  40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40%  10%, rgba(255,255,255,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55%  60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70%  30%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85%  75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 92%  45%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15%  80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 33%  90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75%  88%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 48%  35%, rgba(163,160,217,0.8) 0%, transparent 100%),
+        radial-gradient(2px 2px at 78%  55%, rgba(105,207,225,0.7) 0%, transparent 100%),
+        radial-gradient(2px 2px at 22%  65%, rgba(221,146,236,0.6) 0%, transparent 100%);
+}
+
+
+/* ------------------------------------------------
+   Header — con línea decorativa y brillo
+   ------------------------------------------------ */
+.menu-header {
+    text-align: center;
+    padding: 3.5rem 2rem 2.5rem;
+    position: relative;
+}
+
+/* Línea brillante horizontal detrás del header */
+.menu-header::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 1px;
+    margin: 1.5rem auto 0;
+    background: linear-gradient(90deg,
+        transparent,
+        var(--cyan),
+        var(--rosa),
+        transparent
+    );
+}
+
+.menu-header h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+
+    /* Texto con gradiente de color usando clip */
+    background: linear-gradient(135deg, #ffffff 30%, var(--cyan) 60%, var(--rosa) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-subtitulo {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+}
+
+/* Integrantes debajo del subtítulo */
+.header-integrantes {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.04em;
+}
+
+.header-integrantes span {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    margin: 0.2rem 0.3rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--lila);
+}
+
+
+/* ------------------------------------------------
+   Contenedor principal
+   ------------------------------------------------ */
+main {
+    flex: 1;
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+main h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+
+/* ------------------------------------------------
+   Grilla de botones
+   ------------------------------------------------ */
+.menu-problemas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+
+/* ------------------------------------------------
+   Botón de problema
+   ------------------------------------------------ */
+.btn-problema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.75rem 1rem 1.5rem;
+    border-radius: var(--radio);
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    /* Fondo cristal semitransparente (glassmorphism) */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+
+    color: #ffffff;
+    font-family: Palatino, 'Palatino Linotype', Georgia, serif;
+
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Brillo interior que aparece en hover */
+.btn-problema::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.btn-problema:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.btn-problema:hover::before {
+    opacity: 1;
+}
+
+/* Número grande */
+.btn-numero {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    transition: opacity 0.2s;
+
+    /* Cada número hereda el color del borde inferior de su botón
+       via la variable --color-acento definida por nth-child       */
+    color: var(--color-acento, rgba(255,255,255,0.3));
+}
+
+.btn-etiqueta {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s;
+}
+
+.btn-problema:hover .btn-etiqueta {
+    color: #ffffff;
+}
+
+/* Color de acento individual por botón
+   Define --color-acento y el borde inferior  */
+.btn-problema:nth-child(1) { --color-acento: #63AACE; border-bottom: 2px solid #63AACE; }
+.btn-problema:nth-child(2) { --color-acento: #807EBD; border-bottom: 2px solid #807EBD; }
+.btn-problema:nth-child(3) { --color-acento: #69CFE1; border-bottom: 2px solid #69CFE1; }
+.btn-problema:nth-child(4) { --color-acento: #9DBAE8; border-bottom: 2px solid #9DBAE8; }
+.btn-problema:nth-child(5) { --color-acento: #DD92EC; border-bottom: 2px solid #DD92EC; }
+.btn-problema:nth-child(6) { --color-acento: #A6A0D9; border-bottom: 2px solid #A6A0D9; }
+.btn-problema:nth-child(7) { --color-acento: #5E70A8; border-bottom: 2px solid #5E70A8; }
+.btn-problema:nth-child(8) { --color-acento: #63AACE; border-bottom: 2px solid #63AACE; }
+.btn-problema:nth-child(9) { --color-acento: #69CFE1; border-bottom: 2px solid #69CFE1; }
+
+/* Glow de color en hover usando box-shadow con el acento de cada botón */
+.btn-problema:nth-child(1):hover { box-shadow: 0 8px 24px rgba(99,  170, 206, 0.25); }
+.btn-problema:nth-child(2):hover { box-shadow: 0 8px 24px rgba(128, 126, 189, 0.25); }
+.btn-problema:nth-child(3):hover { box-shadow: 0 8px 24px rgba(105, 207, 225, 0.25); }
+.btn-problema:nth-child(4):hover { box-shadow: 0 8px 24px rgba(157, 186, 232, 0.25); }
+.btn-problema:nth-child(5):hover { box-shadow: 0 8px 24px rgba(221, 146, 236, 0.3);  }
+.btn-problema:nth-child(6):hover { box-shadow: 0 8px 24px rgba(166, 160, 217, 0.25); }
+.btn-problema:nth-child(7):hover { box-shadow: 0 8px 24px rgba(94,  112, 168, 0.25); }
+.btn-problema:nth-child(8):hover { box-shadow: 0 8px 24px rgba(99,  170, 206, 0.25); }
+.btn-problema:nth-child(9):hover { box-shadow: 0 8px 24px rgba(105, 207, 225, 0.25); }
+
+
+/* ------------------------------------------------
+   Footer
+   ------------------------------------------------ */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+}

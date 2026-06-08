@@ -14,4 +14,5 @@ $fechaHoy = date('d/m/Y');
 <footer>
     <p>Desarrollo Web VII &mdash; Universidad Tecnológica de Panamá</p>
     <p>Fecha de ejecución: <?= $fechaHoy ?></p>
+    <p>Aaron López <br>Kevyn Reyes</p>
 </footer>
