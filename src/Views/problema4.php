@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 use Taller\Alkr\Controllers\ProblemaController;
+use Taller\Alkr\Models\Utilidades;
 
 $datos = ProblemaController::problema4();
 ?>
@@ -17,6 +18,10 @@ $datos = ProblemaController::problema4();
         <p>Suma de números <strong>pares</strong> (1–200): <strong><?= $datos['pares'] ?></strong></p>
         <p>Suma de números <strong>impares</strong> (1–200): <strong><?= $datos['impares'] ?></strong></p>
     </main>
+
+    <div class="nav-menu">
+        <?= Utilidades::enlaceMenu('../../index.php') ?>
+    </div>
         <?php include __DIR__ . '/../../footer.php'; ?>
 </body>
 </html>

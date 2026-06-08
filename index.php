@@ -41,8 +41,6 @@ require_once __DIR__ . '/navigation.php';
                 <a href="src/Views/menu.php?problema=<?= $i ?>" class="btn-problema">
                     <span class="btn-numero"><?= str_pad($i, 2, '0', STR_PAD_LEFT) ?></span>
                     <span class="btn-etiqueta">Problema #<?= $i ?></span>
-                <a href="Views/problema<?= $i ?>.php" class="btn-problema">
-                    Problema #<?= $i ?>
                 </a>
             <?php endfor; ?>
         </nav>

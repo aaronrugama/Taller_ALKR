@@ -39,6 +39,13 @@ if (canvasEdades && typeof datosGrafica !== 'undefined') {
                     beginAtZero: true,
                     // Solo mostrar enteros en el eje Y ya que son conteos
                     ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+}
+
+
 function renderizarGraficaPresupuesto(ginecologia, traumatologia, pediatria) {
     const ctx = document.getElementById('graficaPresupuesto').getContext('2d');
     new Chart(ctx, {

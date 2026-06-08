@@ -1,4 +1,5 @@
 <?php
+/** @var array $datos */
 use Taller\Alkr\Models\Utilidades;
 ?>
 <!DOCTYPE html>
