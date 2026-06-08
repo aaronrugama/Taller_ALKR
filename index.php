@@ -37,7 +37,7 @@ require_once 'navigation.php';
              */
             for ($i = 1; $i <= 9; $i++):
             ?>
-                <a href="Views/Problema<?= $i ?>.php" class="btn-problema">
+                <a href="Views/problema<?= $i ?>.php" class="btn-problema">
                     Problema #<?= $i ?>
                     <br>
                 </a>

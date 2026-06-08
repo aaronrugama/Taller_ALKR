@@ -1,0 +1,165 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #06141B;
+    color: #CCD0CF;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex: 1;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #CCD0CF;
+    text-align: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #4A5C6A;
+    padding-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #9BA8AB;
+    margin-bottom: 16px;
+}
+
+/* Formularios */
+form {
+    background-color: #11212D;
+    border: 1px solid #253745;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    color: #9BA8AB;
+    font-size: 0.95rem;
+}
+
+input[type="number"],
+input[type="date"],
+input[type="text"] {
+    background-color: #253745;
+    border: 1px solid #4A5C6A;
+    border-radius: 6px;
+    color: #CCD0CF;
+    font-size: 1rem;
+    padding: 10px 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus {
+    border-color: #9BA8AB;
+}
+
+button[type="submit"] {
+    background-color: #4A5C6A;
+    color: #CCD0CF;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #9BA8AB;
+    color: #06141B;
+}
+
+/* Tarjeta de resultado */
+.tarjeta {
+    background-color: #11212D;
+    border: 1px solid #253745;
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+thead tr {
+    background-color: #253745;
+}
+
+th {
+    padding: 12px 16px;
+    text-align: left;
+    color: #9BA8AB;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #253745;
+    color: #CCD0CF;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #11212D;
+}
+
+/* Resultado destacado */
+.resultado {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #CCD0CF;
+    text-align: center;
+    padding: 16px;
+    background-color: #253745;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Canvas gráficas */
+canvas {
+    display: block;
+    margin: 24px auto 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 56px;
+    margin-top: 250px;
+    border-top: 1px solid #253745;
+    color: #9BA8AB;
+    font-size: 0.85rem;
+}
