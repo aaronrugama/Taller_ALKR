@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Taller\Alkr\Controllers\ProblemaController;
+use Taller\Alkr\Models\Utilidades;
 
 $datos = ProblemaController::problema2();
 ?>
@@ -11,7 +12,7 @@ $datos = ProblemaController::problema2();
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($datos['titulo']) ?></title>
-    <link rel="stylesheet" href="../../Assets/css/estilo.css">
+    <link rel="stylesheet" href="../../assets/css/estilo.css">
 </head>
 <body>
     <main>
@@ -19,6 +20,10 @@ $datos = ProblemaController::problema2();
         <p>La suma de los números del 1 al 1000 es:</p>
         <strong><?= $datos['resultado'] ?></strong>
     </main>
+
+    <div class="nav-menu">
+        <?= Utilidades::enlaceMenu('../../index.php') ?>
+    </div>
     <?php include __DIR__ . '/../../footer.php'; ?>
 </body>
 </html>

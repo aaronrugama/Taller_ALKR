@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 use Taller\Alkr\Controllers\ProblemaController;
+use Taller\Alkr\Models\Utilidades;
 
 $datos = ProblemaController::problema6();
 ?>
@@ -9,7 +10,7 @@ $datos = ProblemaController::problema6();
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($datos['titulo']) ?></title>
-    <link rel="stylesheet" href="../../Assets/css/estilo.css">
+    <link rel="stylesheet" href="../../assets/css/estilo.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -62,5 +63,11 @@ $datos = ProblemaController::problema6();
             </script>
         <?php endif; ?>
     </main>
+
+    <div class="nav-menu">
+        <?= Utilidades::enlaceMenu('../../index.php') ?>
+    </div>
+
+    <?php require_once __DIR__ . '/../../footer.php'; ?>
 </body>
 </html>

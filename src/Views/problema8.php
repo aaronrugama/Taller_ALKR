@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+use Taller\Alkr\Models\Utilidades;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,6 +30,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
                 <img class="imagen-resultado" id="imgEstacion" src="" alt="">
             </div>
         </div>
+    </div>
+
+    <div class="nav-menu">
+        <?= Utilidades::enlaceMenu('../../index.php') ?>
     </div>
 
     <?php include __DIR__ . '/../../footer.php'; ?>
