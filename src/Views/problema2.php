@@ -15,6 +15,10 @@ $datos = ProblemaController::problema2();
     <link rel="stylesheet" href="../../assets/css/estilo.css">
 </head>
 <body>
+        <header class="header">
+        <h1>Problema #2 &mdash; Suma de Números</h1>
+        <p class="subtitulo">La suma de los números del 1 al 1000</p>
+        </header>
     <main>
         <h1><?= htmlspecialchars($datos['titulo']) ?></h1>
         <p>La suma de los números del 1 al 1000 es:</p>

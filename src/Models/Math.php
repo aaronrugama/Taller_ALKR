@@ -149,11 +149,15 @@ class Math {
 
         return $potencias;
     }
-
-    public static function sumaDel1Al1000(): int {
-        return array_sum(range(1, 1000));
-        // Alternativa con fórmula: return (1000 * 1001) / 2;
-    }
+        public static function sumaDel1Al1000(): int {
+            $suma = 0;
+            $i    = 1;
+            while ($i <= 1000) {
+                $suma += $i;
+                $i++;
+            }
+            return $suma;
+        }
         
     public static function sumaPares(): int {
         $suma = 0;

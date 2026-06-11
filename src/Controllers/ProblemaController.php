@@ -248,19 +248,24 @@ class ProblemaController {
 
     public static function problema6(): array {
         $datos = [
-            'titulo' => 'Problema 6 — Distribución de presupuesto hospitalario',
+            'titulo' => 'PRESUPUESTO ANUAL',
             'resultado' => null,
             'presupuesto' => null,
         ];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $presupuesto = floatval($_POST['presupuesto'] ?? 0);
-            if ($presupuesto > 0) {
+        $valorCrudo  = $_POST['presupuesto'] ?? '';
+        $valorLimpio = Utilidades::sanitizar((string)$valorCrudo);
+
+        if (!Validaciones::esPresupuestoValido($valorLimpio)) {
+            $datos['error'] = 'Ingresa un presupuesto válido (solo números, máximo 2 decimales).';
+            } else {
+                $presupuesto        = (float)$valorLimpio;
                 $datos['presupuesto'] = $presupuesto;
                 $datos['resultado']   = Math::calcularPresupuesto($presupuesto);
             }
         }
-            return $datos;
+        return $datos;
     }
 
     /**
@@ -349,7 +354,7 @@ class ProblemaController {
 
     public static function problema8Json(int $mes, int $dia): array {
         $resultado    = Math::calcularEstacion($mes, $dia);
-        $fase         = $resultado['fase'] === 'temprana' ? 'Empezando' : 'Terminando';
+        $fase         = $resultado['fase'] === 'empezando' ? 'Empezando' : 'Terminando';
         $nombreImagen = $resultado['estacion'] . $fase . '.png';
 
         return [

@@ -14,6 +14,10 @@ $datos = ProblemaController::problema6();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+        <header class="header">
+        <h1>Problema #6 &mdash; Distribución del Presupuesto</h1>
+        <p class="subtitulo">Distribución del presupuesto anual</p>
+        </header>
     <main>
         <h1><?= htmlspecialchars($datos['titulo']) ?></h1>
 

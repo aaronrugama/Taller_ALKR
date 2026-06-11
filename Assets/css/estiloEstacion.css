@@ -28,7 +28,7 @@ body {
 .fondo-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.137);
     z-index: 1;
 }
 
@@ -50,26 +50,26 @@ body {
     font-weight: 700;
     color: #0c047d;
     text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Trebuchet MS', sans-serif;
-    text-shadow: 1px 1px 0px rgb(255, 255, 255);
+    margin-bottom: 0px;
+    font-family: 'Times roman', serif;
 }
 
 .subtitulo {
     font-size: 1rem;
-    color: #ffffff;
+    color: #000b82;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 3px;
 }
 
 /* Tarjeta */
 .tarjeta-estacion {
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.772);
     border-radius: 16px;
-    padding: 28px;
+    padding: 18px;
     width: 100%;
     max-width: 480px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin: 0px;
 }
 
 .tarjeta-estacion label {
@@ -88,7 +88,7 @@ body {
     color: #1a2a4a;
     background: white;
     outline: none;
-    margin-bottom: 14px;
+    margin-bottom: 4px;
     transition: border-color 0.2s;
 }
 
@@ -117,23 +117,17 @@ body {
 .divisor {
     border: none;
     border-top: 1px solid #e0e0e0;
-    margin: 20px 0;
+    margin: 2px 0px;
 }
 
 /* Resultado */
-.resultado-label {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
 
 .resultado-estacion {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
     color: #130166;
-    margin-bottom: 14px;
+    margin-bottom: 4px;
     transition: opacity 0.6s ease;
     font: 'Trebuchet MS', sans-serif;
 }
@@ -159,13 +153,40 @@ body {
     opacity: 1;
 }
 
-/* Footer */
-footer {
+.nav-menu {
     position: relative;
     z-index: 10;
     text-align: center;
-    padding: 16px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
+    margin-top: 16px;
+}
+
+.btn-menu {
+    display: inline-block;
+    font-family: Georgia, serif;
+    margin-top: 16px;
+    padding: 10px 18px;
+    background-color: #8c8c8c;
+    color: rgb(255, 255, 255);
+    border-radius: 8px ;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-menu:hover {
+    background-color: #000000;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 56px;
+    margin-top: 250px;
+    border-top: 1px solid #000000;
+    color: #000000;
+    font-size: 0.85rem;
 }
 
