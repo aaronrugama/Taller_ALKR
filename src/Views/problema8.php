@@ -15,17 +15,15 @@ use Taller\Alkr\Models\Utilidades;
     <div class="fondo-overlay"></div>
 
     <div class="contenido">
-        <h1 class="titulo-principal">Estación del Año</h1>
-        <p class="subtitulo">Elige una fecha y descubre la estación del año.</p>
-
         <div class="tarjeta-estacion">
+            <h1 class="titulo-principal">Estación del Año</h1>
+            <p class="subtitulo">Elige una fecha y descubre la estación del año.</p>
             <label for="fecha">Selecciona una fecha</label>
             <input type="date" id="fecha" name="fecha" required>
             <button class="btn-ver" id="btnVer">Ver estación</button>
 
             <div id="resultado" style="display:none;">
                 <hr class="divisor">
-                <p class="resultado-label">Estación correspondiente</p>
                 <p class="resultado-estacion" id="nombreEstacion"></p>
                 <img class="imagen-resultado" id="imgEstacion" src="" alt="">
             </div>

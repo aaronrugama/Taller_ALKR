@@ -67,4 +67,20 @@ class Validaciones {
         $nota = (float)$valor;
         return $nota >= 0 && $nota <= 100;
     }
+        /**
+     * Valida que un valor sea un número decimal válido para presupuesto.
+     * Usa preg_match para verificar el formato: dígitos con punto decimal opcional.
+     * Ejemplo válido: 1000, 1000.50, 99999.99
+     *
+     * @param mixed $valor Valor a validar
+     * @return bool true si tiene formato de presupuesto válido
+     */
+    public static function esPresupuestoValido(mixed $valor): bool
+    {
+        // preg_match verifica que solo contenga dígitos y opcionalmente decimales
+        if (!preg_match('/^\d+(\.\d{1,2})?$/', (string)$valor)) {
+            return false;
+        }
+        return (float)$valor > 0;
+    }
 }

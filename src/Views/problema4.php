@@ -13,6 +13,10 @@ $datos = ProblemaController::problema4();
     <link rel="stylesheet" href="../../Assets/css/estilo.css">
 </head>
 <body>
+         <header class="header">
+        <h1>Problema #4 &mdash; Números Pares e Impares</h1>
+        <p class="subtitulo">Suma de números pares e impares del 1 al 200:</p>
+        </header>   
     <main>
         <h1><?= htmlspecialchars($datos['titulo']) ?></h1>
         <p>Suma de números <strong>pares</strong> (1–200): <strong><?= $datos['pares'] ?></strong></p>

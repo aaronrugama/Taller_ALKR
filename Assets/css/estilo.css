@@ -5,13 +5,13 @@
 }
 
 body {
-    background-color: #06141B;
+    background-color: #EBEBDF;
     color: #CCD0CF;
     font-family: 'Segoe UI', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    min-height: 100vh;
-    padding: 20px;
+    min-height: 100vh; 
+    padding: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -22,22 +22,60 @@ main {
     padding: 30px 20px;
     flex: 1;
 }
+.header {
+    background-color: #161719;
+    color: #ffffff;
+    padding: 0rem 0rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 1.25rem;
+    color: #D0D4D7;
+    text-align:left;
+    padding: 1px;
+    font-family: 'Times roman', serif;
+    margin-bottom: 1px;
+}
+
+.header .subtitulo {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-family: 'Courier New', monospace;
+    color : #D0D4D7;
+    margin: 1px; 
+}
 
 h1 {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #CCD0CF;
+    color: #161719;
     text-align: center;
     margin-bottom: 24px;
     border-bottom: 1px solid #4A5C6A;
     padding-bottom: 12px;
+    font-family: 'Times roman', serif;
 }
 
 h2 {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #9BA8AB;
+    color: #161719;
     margin-bottom: 16px;
+    font-family: 'Times roman', serif;
+}
+
+p {
+    
+    color: #161719;
+    font-family:'Times New Roman', Times, serif
+
+}
+strong {
+    color: #161719;
+    font-family:'Times New Roman', Times, serif
 }
 
 /* Formularios */
@@ -153,6 +191,35 @@ canvas {
     display: block;
     margin: 24px auto 0;
 }
+
+.nav-menu {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.btn-menu {
+    display: inline-block;
+    font-family: Georgia, serif;
+    margin-top: 16px;
+    padding: 10px 18px;
+    background-color: #6f6f6f;
+    color: rgb(255, 255, 255);
+    border-radius: 8px ;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-menu:hover {
+    background-color: #161719;
+}
+
+
+
 
 /* Footer */
 footer {
