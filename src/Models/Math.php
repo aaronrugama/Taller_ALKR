@@ -149,108 +149,89 @@ class Math {
 
         return $potencias;
     }
-// Calcula la suma de los números del 1 al 1000 utilizando un ciclo while.
-public static function sumaDel1Al1000(): int {
-    $suma = 0; // Acumulador de la suma.
-    $i    = 1; // Contador inicial.
 
-    while ($i <= 1000) {
-        $suma += $i; // Suma el valor actual al acumulador.
-        $i++;        // Incrementa el contador.
+     /**
+     * Calcula la suma de todos los números del 1 al 1000.
+     * Usa range() para generar el arreglo y array_sum() para sumarlos.
+     * Resultado esperado: 500500
+     *
+     * @return int Suma total
+     */
+    public static function sumaDel1Al1000(): int {
+        return array_sum(range(1, 1000));
+        // Alternativa con fórmula: return (1000 * 1001) / 2;
     }
-
-    return $suma; // Retorna el resultado final.
-}
-
-// Calcula la suma de todos los números pares entre 1 y 200.
-public static function sumaPares(): int {
-    $suma = 0; // Acumulador de la suma.
-
-    for ($i = 1; $i <= 200; $i++) {
-        // Verifica si el número es par.
-        if ($i % 2 === 0) {
-            $suma += $i;
+        
+     /**
+     * Calcula la suma de todos los números pares entre 1 y 200.
+     * Recorre el rango con un for y acumula solo los divisibles entre 2.
+     *
+     * @return int Suma de pares
+     */
+    public static function sumaPares(): int {
+        $suma = 0;
+        for ($i = 1; $i <= 200; $i++) {
+            if ($i % 2 === 0) $suma += $i;
         }
+        return $suma;
     }
-
-    return $suma; // Retorna la suma de los pares.
-}
-
-// Calcula la suma de todos los números impares entre 1 y 200.
-public static function sumaImpares(): int {
-    $suma = 0; // Acumulador de la suma.
-
-    for ($i = 1; $i <= 200; $i++) {
-        // Verifica si el número es impar.
-        if ($i % 2 !== 0) {
-            $suma += $i;
+        
+     /**
+     * Calcula la suma de todos los números impares entre 1 y 200.
+     * Recorre el rango con un for y acumula solo los no divisibles entre 2.
+     *
+     * @return int Suma de impares
+     */
+    public static function sumaImpares(): int {
+        $suma = 0;
+        for ($i = 1; $i <= 200; $i++) {
+            if ($i % 2 !== 0) $suma += $i;
         }
+        return $suma;
     }
-
-    return $suma; // Retorna la suma de los impares.
-}
-
-// Distribuye el presupuesto total entre tres departamentos.
-public static function calcularPresupuesto(float $total): array {
-    return [
-        'Ginecología'   => $total * 0.40, // 40% del presupuesto.
-        'Traumatología' => $total * 0.35, // 35% del presupuesto.
-        'Pediatría'     => $total * 0.25, // 25% del presupuesto.
-    ];
-}
-
-// Determina la estación del año y si está empezando o terminando.
-public static function calcularEstacion(int $mes, int $dia): array {
-    // Convierte la fecha a formato MMDD para facilitar comparaciones.
-    $fecha = $mes * 100 + $dia;
-
-    // Verano: del 21 de diciembre al 20 de marzo.
-    if ($fecha >= 1221 || $fecha <= 320) {
-
-        // Calcula cuántos días aproximados han transcurrido dentro de la estación.
-        $mitad = ($fecha >= 1221) ? ($fecha - 1221) : ($fecha + 1079);
-
-        // Define si la estación está comenzando o terminando.
-        $fase = $mitad < 45 ? 'empezando' : 'terminando';
-
+    
+     /**
+     * Distribuye un presupuesto anual entre las tres áreas del hospital.
+     * Ginecología recibe 40%, Traumatología 35% y Pediatría 25%.
+     *
+     * @param float $total Presupuesto total a distribuir
+     * @return array Arreglo asociativo [area => monto]
+     */
+    public static function calcularPresupuesto(float $total): array {
         return [
-            'estacion' => 'Verano',
-            'fase' => $fase
-        ];
-
-    // Otoño: del 21 de marzo al 21 de junio.
-    } elseif ($fecha >= 321 && $fecha <= 621) {
-
-        $mitad = $fecha - 321;
-        $fase = $mitad < 45 ? 'empezando' : 'terminando';
-
-        return [
-            'estacion' => 'Otoño',
-            'fase' => $fase
-        ];
-
-    // Invierno: del 22 de junio al 22 de septiembre.
-    } elseif ($fecha >= 622 && $fecha <= 922) {
-
-        $mitad = $fecha - 622;
-        $fase = $mitad < 45 ? 'empezando' : 'terminando';
-
-        return [
-            'estacion' => 'Invierno',
-            'fase' => $fase
-        ];
-
-    // Primavera: del 23 de septiembre al 20 de diciembre.
-    } else {
-
-        $mitad = $fecha - 923;
-        $fase = $mitad < 45 ? 'empezando' : 'terminando';
-
-        return [
-            'estacion' => 'Primavera',
-            'fase' => $fase
+            'Ginecología'    => $total * 0.40,
+            'Traumatología'  => $total * 0.35,
+            'Pediatría'      => $total * 0.25,
         ];
     }
+           
+     /**
+     * Determina la estación del año a partir de un mes y día dados.
+     * Compara la fecha codificada como mes*100+dia contra los rangos de cada estación.
+     *
+     * @param int $mes Mes del año (1-12)
+     * @param int $dia Día del mes (1-31)
+     * @return array Arreglo con 'estacion' y 'fase' (empezando o terminando)
+     */
+    public static function calcularEstacion(int $mes, int $dia): array {
+        $fecha = $mes * 100 + $dia;
+        if ($fecha >= 1221 || $fecha <= 320) {
+            $mitad = ($fecha >= 1221) ? ($fecha - 1221) : ($fecha + 1079);
+            $fase  = $mitad < 45 ? 'empezando' : 'terminando';
+            return ['estacion' => 'Verano', 'fase' => $fase];
+        } elseif ($fecha >= 321 && $fecha <= 621) {
+            $mitad = $fecha - 321;
+            $fase  = $mitad < 45 ? 'empezando' : 'terminando';
+            return ['estacion' => 'Otoño', 'fase' => $fase];
+        } elseif ($fecha >= 622 && $fecha <= 922) {
+            $mitad = $fecha - 622;
+            $fase  = $mitad < 45 ? 'empezando' : 'terminando';
+            return ['estacion' => 'Invierno', 'fase' => $fase];
+        } else {
+            $mitad = $fecha - 923;
+            $fase  = $mitad < 45 ? 'empezando' : 'terminando';
+            return ['estacion' => 'Primavera', 'fase' => $fase];
+        }
     }
 }
 
