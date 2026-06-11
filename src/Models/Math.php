@@ -150,11 +150,24 @@ class Math {
         return $potencias;
     }
 
+     /**
+     * Calcula la suma de todos los números del 1 al 1000.
+     * Usa range() para generar el arreglo y array_sum() para sumarlos.
+     * Resultado esperado: 500500
+     *
+     * @return int Suma total
+     */
     public static function sumaDel1Al1000(): int {
         return array_sum(range(1, 1000));
         // Alternativa con fórmula: return (1000 * 1001) / 2;
     }
         
+     /**
+     * Calcula la suma de todos los números pares entre 1 y 200.
+     * Recorre el rango con un for y acumula solo los divisibles entre 2.
+     *
+     * @return int Suma de pares
+     */
     public static function sumaPares(): int {
         $suma = 0;
         for ($i = 1; $i <= 200; $i++) {
@@ -163,6 +176,12 @@ class Math {
         return $suma;
     }
         
+     /**
+     * Calcula la suma de todos los números impares entre 1 y 200.
+     * Recorre el rango con un for y acumula solo los no divisibles entre 2.
+     *
+     * @return int Suma de impares
+     */
     public static function sumaImpares(): int {
         $suma = 0;
         for ($i = 1; $i <= 200; $i++) {
@@ -171,6 +190,13 @@ class Math {
         return $suma;
     }
     
+     /**
+     * Distribuye un presupuesto anual entre las tres áreas del hospital.
+     * Ginecología recibe 40%, Traumatología 35% y Pediatría 25%.
+     *
+     * @param float $total Presupuesto total a distribuir
+     * @return array Arreglo asociativo [area => monto]
+     */
     public static function calcularPresupuesto(float $total): array {
         return [
             'Ginecología'    => $total * 0.40,
@@ -178,7 +204,15 @@ class Math {
             'Pediatría'      => $total * 0.25,
         ];
     }
-            
+           
+     /**
+     * Determina la estación del año a partir de un mes y día dados.
+     * Compara la fecha codificada como mes*100+dia contra los rangos de cada estación.
+     *
+     * @param int $mes Mes del año (1-12)
+     * @param int $dia Día del mes (1-31)
+     * @return array Arreglo con 'estacion' y 'fase' (empezando o terminando)
+     */
     public static function calcularEstacion(int $mes, int $dia): array {
         $fecha = $mes * 100 + $dia;
         if ($fecha >= 1221 || $fecha <= 320) {
